@@ -115,31 +115,62 @@ header ul li:hover a {
 }
 
 .info {
-  height: 35%;
-  width: 50%;
+  height: fit-content;
   background-color: #00c7fc55;
   position: absolute;
   transform: translate(0, -50%);
+  max-width: 50%;
   top: 50%;
   padding: 50px;
-  padding-left: 20%;
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   flex-direction: column;
   line-height: 2;
 }
 
+.text {
+  width: clamp(400px, 70%, 100%);
+}
+
 .info h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: normal;
   line-height: 1.5;
 }
 
 .info p {
-  margin-top: 5px;
-  font-size: 16px;
+  margin-top: 25px;
+  font-size: 0.875rem;
   font-weight: normal;
+  word-break: keep-all;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.fa-angle-right {
+  right: 20px;
+}
+
+.fa-angle-left {
+  left: 20px;
+}
+
+@media (max-width: 992px) {
+  .info {
+    max-width: unset;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
 }
 /* Landing End */
